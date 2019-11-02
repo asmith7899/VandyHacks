@@ -1,1 +1,90 @@
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>StART Up</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="fsake.html">StART Up</a>
+    </div> 
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+ <div class="row">
+  <div class="col-sm-6">
+  <div class="form-group">
+  <label for="comment">Zip Code:</label>
+  <textarea class="form-control" rows="1" id="comment"></textarea>
+</div> 
+  </div>
+  <div class="col-sm-6">
+  <div class="form-group">
+  <label for="sel1">Select Search Radius:</label>
+  <select class="form-control" id="sel1">
+    <option>10 miles</option>
+    <option>25 miles</option>
+    <option>50 miles</option>
+    <option>100 miles</option> 
+	</select>
+  </div>
+</div> 
+</div>
+</div>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="https://www.washingtonpost.com/resizer/oxwOpdFkS_xMprsURdQ0CZyToGs=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/LANJCUHDREI6PET244XKYHTTWY.jpg" alt="Nutcracker">
+    </div>
+
+    <div class="item">
+      <img src="https://media.vanityfair.com/photos/5a4e7bb6518d781e720e1059/16:9/w_2560%2Cc_limit/Metropolitan-Museum-of-Art-Tourist-Rate.jpg" alt="Vinci">
+	  </div>
+	
+
+    <div class="item">
+      <img src="http://www.safareya.com/En/Content/Admin/Uploads/Articles/ArticlesMainPhoto/1183/Safareya_changi_airport2.jpg" alt="A">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+</body>
+</html>
