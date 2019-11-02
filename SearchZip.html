@@ -1,4 +1,4 @@
-<!-- Latest compiled and minified CSS -->
+ <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -13,11 +13,38 @@
 .header {
 	text-align: center;
 	background-color: #404040;
-	padding-bottom: 40px;
-	padding-top: 40px;
+	padding-bottom: 0px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 60px;
+	vertical-align:center;
+	letter-spacing: 6px;
+	font-size: 50px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-color: #000000;
+	border-width: 3px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+</style>
+<style>
+.header2 {
+	text-align: center;
+	background-color: #404040;
+	padding-bottom: 20px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 0px;
 	margin-bottom: 15px;
 	letter-spacing: 6px;
-	font-size: 40px;
+	font-size: 25px;
 	font-weight: bold;
 	color: #000000;
 	text-decoration: none;
@@ -42,20 +69,22 @@
 
   <div class="container-fluid">
   <div class="header">
-      <a href="fsake.html" style="color:#cccccc">Find / Art</a>
+      <a href="index_search.html" style= "color:#cccccc;margin-top: 20px">Find / Art</a>
 	 </div>
+	 <div class = "header2">
+	 <a href="index_search.html" style="color:#cccccc">Local. Affordable. Your Eyes Like It.</a>
   </div>
 </nav>
 
 <div class="container">
  <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   <div class="form-group">
   <label for="usr">Zip Code:</label>
   <input type="search" class="form-control" id="usr">
 </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-sm-3">
   <div class="form-group">
   <label for="sel1">Select Search Radius:</label>
   <select class="form-control" id="sel1">
@@ -67,7 +96,7 @@
 	</select>
   </div>
 </div> 
-  <div class="col-sm-4">
+  <div class="col-sm-3">
  <div class="form-group">
   <label for="sel1">Budget per Person:</label>
   <select class="form-control" id="sel1">
@@ -80,13 +109,10 @@
   </select>
 </div> 
 </div>
-<div class="row">
-<div class=col-sm-6></div>
-<div class=col-sm-6 style="padding-bottom:10px">
-<button type="button" class="btn btn-default">
+<div class=col-sm-3>
+<button type="button" class="btn btn-block"style="margin:23px">
     <span class="glyphicon glyphicon-search"></span> Search 
   </button>
-</div>
 </div>
 </div>
 
