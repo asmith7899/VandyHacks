@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>StART Up</title>
+  <title>Find Art</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -31,13 +31,13 @@
 
 <div class="container">
  <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-4">
   <div class="form-group">
-  <label for="comment">Zip Code:</label>
-  <textarea class="form-control" rows="1" id="comment"></textarea>
-</div> 
+  <label for="usr">Zip Code:</label>
+  <input type="search" class="form-control" id="usr">
+</div>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-4">
   <div class="form-group">
   <label for="sel1">Select Search Radius:</label>
   <select class="form-control" id="sel1">
@@ -48,6 +48,25 @@
 	</select>
   </div>
 </div> 
+<div class="col-sm-1">
+<label for="sell">Budget per Person:</label>
+</div>
+<div class="col-sm-3">
+<label class="checkbox-inline"><input type="checkbox" value="">$0-$10</label>
+<label class="checkbox-inline"><input type="checkbox" value="">$10-$20</label>
+<label class="checkbox-inline"><input type="checkbox" value="">$20-$30</label> 
+<label class="checkbox-inline"><input type="checkbox" value="">$30-$40</label>
+<label class="checkbox-inline"><input type="checkbox" value="">$40+</label>
+</div>
+<div class="row">
+<div class=col-sm-6></div>
+<div class=col-sm-6>
+<button type="button" class="btn btn-default">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </button>
+
+
+</div>
 </div>
 </div>
 
@@ -67,11 +86,10 @@
 
     <div class="item">
       <img src="https://media.vanityfair.com/photos/5a4e7bb6518d781e720e1059/16:9/w_2560%2Cc_limit/Metropolitan-Museum-of-Art-Tourist-Rate.jpg" alt="Vinci">
-	  </div>
-	
+    </div>
 
     <div class="item">
-      <img src="http://www.safareya.com/En/Content/Admin/Uploads/Articles/ArticlesMainPhoto/1183/Safareya_changi_airport2.jpg" alt="A">
+      <img src="http://www.safareya.com/En/Content/Admin/Uploads/Articles/ArticlesMainPhoto/1183/Safareya_changi_airport2.jpg" alt="Airport">
     </div>
   </div>
 
@@ -85,6 +103,5 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 </body>
 </html>
