@@ -19,31 +19,61 @@
       margin: 0;
       padding: 0;
     }
+
   </style>
-  <script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPxDT17n-Of-WP6bmJrHUdGpbrWKPC70s&libraries=places&callback=initMap" async defer></script>
+
+  <script async defer>
     // This example requires the Places library. Include the libraries=places
     // parameter when you first load the API. For example:
     // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
     var map;
     var service;
     var infowindow;
+
+
+    function geocode (address) {
+      const geocoder = new google.maps.Geocoder();
+      geocoder.geocode({address}, function(results, status) {
+        if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+      })
+    }
+
     function initMap() {
-      var vanderbilt = new google.maps.LatLng(36.1447,-86.8027);
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const location = urlParams.get('city');
+      const budget = urlParams.get('budget');
+
+      console.log(budget);
+
+
+      geocode(location);
+
+      // var vanderbilt = new google.maps.LatLng(36.1447,-86.8027);
       infowindow = new google.maps.InfoWindow();
       map = new google.maps.Map(
-          document.getElementById('map'), {center: vanderbilt, zoom: 15});
-      service = new google.maps.places.PlacesService(map);
-      service.nearbySearch(
-        {location: vanderbilt, radius: 500, types: ['restaurant']},
-        function(results, status, pagination) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-              for (var i = 0; i < results.length; i++) {
-                createMarker(results[i]);
-              }
-              map.setCenter(results[0].geometry.location);
-            }
-        }
-      )
+          document.getElementById('map'), {zoom: 15});
+      // service = new google.maps.places.PlacesService(map);
+      // service.nearbySearch(
+      //   {location: vanderbilt, radius: 500, types: ['restaurant']},
+      //   function(results, status, pagination) {
+      //     if (status === google.maps.places.PlacesServiceStatus.OK) {
+      //         for (var i = 0; i < results.length; i++) {
+      //           createMarker(results[i]);
+      //         }
+      //         map.setCenter(results[0].geometry.location);
+      //       }
+      //   }
+      // )
     }
     function createMarker(place) {
       var marker = new google.maps.Marker({
@@ -59,6 +89,5 @@
 </head>
 <body>
   <div id="map"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPxDT17n-Of-WP6bmJrHUdGpbrWKPC70s&libraries=places&callback=initMap" async defer></script>
 </body>
 </html>
