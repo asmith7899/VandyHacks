@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Michelle's Restaurant</title>
+  <title>Find / Art</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -9,34 +9,38 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   
   <style>
+  .event {
+  border-bottom-color:black;
+  border-bottom-width: 4px;
+  }
+  </style>
+  
+  <style>
   body {
-  font-family: "Lato", sans-serif;
+  font-family: "Courier New", Courier, monospace;
+	font:TT;
+	  background: rgba(204)(204)(204) 0.50;
 }
-
 .sidenav {
   height: 100%;
   width: 35%;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #FFFFFF;
+  background-color: #e6e6e6;
   overflow-x: hidden;
   padding-top: 120px;
 }
-
 .sidenav a {
    width: 35%;
   text-decoration: none;
   font-size: 25px;
   color: #818181;
-
 }
-
 .sidenav a:hover {
   width: 35%
   color: #f1f1f1;
 }
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -46,21 +50,22 @@
   .center {
   text-align: right;
 }
-
 .center_text {
 	text-align: center;
 }
-
 .header {
 	text-align: center;
 	background-color: #404040;
-	padding-bottom: 40px;
-	padding-top: 40px;
+	padding-bottom: 0px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 60px;
+	vertical-align:center;
 	letter-spacing: 6px;
-	font-size: 40px;
+	font-size: 50px;
 	font-weight: bold;
-	color: #0000CC;
-	width: 100%;
+	color: #000000;
 	text-decoration: none;
 	border-color: #000000;
 	border-width: 3px;
@@ -70,12 +75,34 @@
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 }
-
+</style>
+<style>
+.header2 {
+	text-align: center;
+	background-color: #404040;
+	padding-bottom: 20px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 0px;
+	margin-bottom: 15px;
+	letter-spacing: 6px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-color: #000000;
+	border-width: 3px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
 .event {
 width = 35%
 	margin: 10px;
 }
-
 .map {
    align: right;
    height: 100%
@@ -84,34 +111,25 @@ width = 35%
   </style>
 </head>
 <body>
-
-  <div class="container-fluid">   
-	<div class="header">
-			<a href="search_results.html" style="color:#A0A0A0">FIND / ART</a>
-	</div>
+<div class="container-fluid">
+  <div class="header">
+      <a href="index_search.html" style= "color:#d9d9d9;margin-top: 20px">Find / Art</a>
+	 </div>
+	 <div class = "header2">
+	 <a href="index_search.html" style="color:#d9d9d9">Local. Affordable. Your Eyes Like It.</a> 
   </div>
   
 	<div class="row">
 		<div class="center_text">
-		<h1>Events Near You</h1>
+		<h1><b>Events Near You <b></h1>
 	</div>
 	</div>
-  
-  <div class="sidenav">
-  <div class="container-fluid">
-	<div class="event"> 
-		<a href="#" style="text-align:center;padding-left:7px;width:35%">Event Name</a>
-		<h2>More info</h2>
-	</div>
-	</div>
-	</div>
-
-  
-<div class="center">  
+	
+	<div class="center">  
 <div class="container-fluid">
 	<div class="map">
 		 <iframe
-  width="650"
+  width="1200"
   height="450"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDPxDT17n-Of-WP6bmJrHUdGpbrWKPC70s&q=art+near+47906" allowfullscreen>
@@ -119,6 +137,81 @@ width = 35%
 </div>
 </div>
 </div>
+  
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-sm-6">
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:100%; border: black">Children's Day at the Museum of Modern Art</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:25%">Kite-Building With WWI Veterans</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:25%">Honey Ham Roast</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:25%">Pastor Dorkus's and his Cow Annabelle's Third Platonic Wedding Anniversary</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	</div>
+  <div class="col-sm-6">
+  	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:100%; border: black">Heart DIsease Awareness Parade</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:25%">Heart Warning Signs Serious Discussion</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:25%">Heart Health Moment of Silence</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	<div class="event"> 
+		<a href="#" style="text-align:center;padding-left:7px;width:25%">Scarecrow Reanimation by Alchemy and Witchcraft Science Fair and Arts Festival</a>
+		<h2>More info</h2>
+		<p>$ $ $</p>
+		<p>10 mi</p>
+	</div>
+	</div>
+	
+<footer>
+<div class="footer">
+  <p> <style>
+.footer {
+letter-spacing:5px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+</style>
 
+<div class="footer">
+  <p><b> Purdue	University • Arianna Smith • Kiara	Smith • Trisha 	Ghosh •	Cindy Ding • Vandyhacks VI </b></p>
+</div> </p>
+</div> 
+</footer>
 </body>
 </html>
