@@ -4,7 +4,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Place Searches</title>
+</style>
+	<style>
+.header {
+	text-align: center;
+	background-color: #404040;
+	padding-bottom: 0px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 60px;
+	vertical-align:center;
+	letter-spacing: 6px;
+	font-size: 50px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-color: #000000;
+	border-width: 3px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+</style>
+<style>
+.header2 {
+	text-align: center;
+	background-color: #404040;
+	padding-bottom: 40px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 0px;
+	margin-bottom: 15px;
+	letter-spacing: 6px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-color: #000000;
+	border-width: 3px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+</style>
+  <title>Find x Art</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <style>
@@ -20,7 +69,6 @@
       margin: 0;
       padding: 0;
     }
-
   </style>
 
   <style>
@@ -60,8 +108,6 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
   }
-
-
   .center {
   text-align: right;
   }
@@ -134,7 +180,6 @@
     var map;
     var service;
     var infowindow;
-
     function geocode(address) {
       const geocoder = new google.maps.Geocoder();
       geocoder.geocode({address}, function(results, status) {
@@ -149,22 +194,16 @@
       }
     });
     }
-
     function initMap() {
       const urlParams = new URLSearchParams(window.location.search);
       // const location = urlParams.get('location');
       // const budget = urlParams.get('budget');
       // const radius = urlParams.get('radius');
-
       // const place = urlParams.get('place_id');
       const place = urlParams.get("location");
-
       // Cheekwood Botanical Garden and Museum of Art
-
       console.log(place);
-
       geocode(place);
-
       // var vanderbilt = new google.maps.LatLng(36.1447,-86.8027);
       infowindow = new google.maps.InfoWindow();
       map = new google.maps.Map(
@@ -181,19 +220,15 @@
       //       }
       //   }
       // )
-
       var para = document.createElement("h1");               // Create a <p> element
       para.innerText = place;               // Insert text
       document.body.appendChild(para);
-
       var address = document.createElement("p");
       address.innerText = "233 5th Ave N, Nashville, TN 37219";
       document.body.appendChild(address);
-
       var phone = document.createElement("p");
       phone.innerText = "(615) 752-6030";
       document.body.appendChild(phone);
-
       var hours = document.createElement("p");
       hours.innerText = "Hours today: Closed";
       document.body.appendChild(hours);
@@ -208,7 +243,6 @@
         infowindow.open(map, this);
       });
     }
-
     function getAddress() {
       const address = new google.maps.Geocoder();
       geocoder.geocode({address}, function(results, status) {
@@ -223,20 +257,17 @@
       }
     });
     }
-
     // function getURL() {
       // var link = document.createElement('a');
       // var linkText = document.createTextNode(address);
       // a.appendChild(linkText);
       // a.title = address;
       // a.href = "http://example.com";
-
     //   var map = new google.maps.Map(document.getElementById('map'));
     //   document.getElementById('submit').addEventListener('click', function() {
     //     geocodePlaceId(geocoder, map, infowindow);
     //   });
     // }
-
     // This function is called when the user clicks the UI button requesting
     // a geocode of a place ID.
     function geocodePlaceId(geocoder, map, infowindow) {
@@ -269,6 +300,14 @@
 
 </head>
 <body>
+<div class="container-fluid">
+  <div class="header">
+      <a href="index_search.html" style= "color:#d9d9d9;margin-top: 20px">Find x Art</a>
+	 </div>
+	 <div class = "header2">
+	 <a href="index_search.html" style="color:#d9d9d9">Local. Affordable. Your Eyes Like It.</a>
+  </div>
+  </div>
   <div id="map"></div>
 
   <div class="container-fluid">
@@ -282,5 +321,23 @@
   </div>
   </div>
   </div>
+<footer>
+<style>
+.footer {
+letter-spacing:4px;
+  position: fixed;
+  left: 0;
+  margin-top: 20%;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+</style>
+  <div class="footer">
+  <p><b> Purdue	University • Arianna Smith • Kiara	Smith • Trisha 	Ghosh •	Cindy Ding • Vandyhacks VI </b></p>
+</div> </p> 
+</footer>
 </body>
 </html>
