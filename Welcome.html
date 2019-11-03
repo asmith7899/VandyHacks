@@ -1,1 +1,153 @@
+<html>
+   <head>
+      <title>Find Art</title>
+      <link rel="stylesheet" href="style.css"
+         type = "text/css" />
+      <style>
+         body {
+         background-image:url("");
+         background-size: cover;
+         background-attachment: fixed;
+         margin: 0;
+         padding: 0;
+         }
+         .footer {
+         letter-spacing:  8px;
+         position: fixed;
+         left: 0; 
+         bottom: 0; 
+         width: 100%;
+         text-align: center;
+         }
+      </style>
+      <style>
+.header {
+	text-align: center;
+	background-color: #404040;
+	padding-bottom: 20px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 60px;
+	vertical-align:center;
+	letter-spacing: 6px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;
+	border-color: #000000;
+	border-width: 3px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+</style>
+<style>
+.header2 {
+	text-align: center;
+	background-color: #404040;
+	padding-bottom: 20px;
+	font-family: "Courier New", Courier, monospace;
+	font:TT;
+	/font isnt exactly the same cause of 
+	padding-top: 40px;
+	margin-bottom: 15px;
+	letter-spacing: 6px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline overline dotted white|initial|inherit;
+	border-color: #000000;
+	border-width: 3px;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+</style>
+  <title>Find Art</title>
+<script>
+  var slideIndex = 0;
+showSlides();
 
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none"; 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].style.display = "block"; 
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+   </head>
+   <body>
+	<div class= "slidershow middle">
+
+		<div class= "slides">
+			<input type= "radio" name = "r" id= "r1" checked>
+			<input type= "radio" name = "r" id= "r2">
+			<input type= "radio" name = "r" id= "r3">
+			<input type= "radio" name = "r" id= "r4">
+			<input type= "radio" name = "r" id= "r5">
+			<div
+				<img src="https://cdn.britannica.com/24/189624-050-F3C5BAA9/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg" style="width:100%" alt="">
+			</div>
+	
+			<div class= "slides">
+				<img src="https://cdn.pastemagazine.com/www/system/images/photo_albums/maps/large/emily-garfield-maps.jpg?1384968217" style="width:100%" alt="">
+			</div>
+	
+			<div class= "slides">
+				<img src="https://www.trbimg.com/img-563947e4/turbine/la-trb-seattle-gum-wall-20151103-003" style="width:100%" alt="">
+			</div>
+	
+			<div class= "slides">
+				<img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" style="width:100%" alt="">
+			</div>
+	
+			<div class= "slides">
+				<img src="https://www.dailyartmagazine.com/wp-content/uploads/2017/09/DHS76_771_0.jpg" style="width:100%" alt="">
+			</div>
+		</div>
+		<div class="navigation">
+			<label for="r1" class="bar"></lable>
+			<label for="r2" class="bar"></lable>
+			<label for="r3" class="bar"></lable>
+			<label for="r4" class="bar"></lable>
+			<label for="r5" class="bar"></lable>
+		</div>
+	</div>
+	
+
+      <div class = "wrapper">
+         <div class = "heading" >
+            <h1>
+               <p class= "center"> <TT>Find <font color = "f3bc69" > X </font> Art</TT></p>
+            </h1>
+         </div>
+         <div class = "content">
+            <p class="center"> <font color = "black" size="+4">
+               <TT> Welcome! </TT><br>
+               <TT> Click <a href="http://www.yahoo.com"><font color = black> here</font></a> to find art around you. </TT> <br>
+               </font>
+<!-- 
+               <button style = "background-color: rgba(204, 204, 204, 0.25); 
+               border-color: 1c1913; font-size: 20px; 
+               border-radius: 12px; width: 100%; margin: 0 auto" class="">click here!</button>
+ -->
+         </div>
+         <div class = "footer">
+            <p class="center"><font color = "f3bc69" >
+               Arianna Cindy Kiara Trisha	
+               </font>
+            </p>
+         </div>
+      </div>
+   </body>
+</html>
