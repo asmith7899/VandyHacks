@@ -1,4 +1,4 @@
- <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -57,7 +57,7 @@
 		1px 1px 0 #000;
 }
 </style>
-  <title>Find x Art</title>
+  <title>Find Art</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -68,25 +68,40 @@
 
   <div class="container-fluid">
   <div class="header">
-      <a href="index_search.html" style= "color:#d9d9d9;margin-top: 20px">Find x Art</a>
+      <a href="index_search.html" style= "color:#d9d9d9;margin-top: 20px">Find / Art</a>
 	 </div>
 	 <div class = "header2">
 	 <a href="index_search.html" style="color:#d9d9d9">Local. Affordable. Your Eyes Like It.</a>
   </div>
 </nav>
 
+<script>
+function myFunction() {
+  var x = document.getElementById("form1");
+  var text = "";
+  var city = x[0];
+  var radius = x[1];
+  var budget = x[2]; 
+  window.localStorage.setItem("city", city);
+  window.localStorage.setItem("radius", radius);
+  window.localStorage.setItem("budget", budget);
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+<p id="demo"></p>
 <div class="container">
+<form action="search_results.html" method="GET" id="form1">
  <div class="row">
   <div class="col-sm-3">
   <div class="form-group">
-  <label for="usr">:</label>
-  <input type="search" class="form-control" id="usr">
+  <label for="usr">City:</label>
+  <input type="search" class="form-control" id="city" name="city"></input>
 </div>
   </div>
   <div class="col-sm-3">
   <div class="form-group">
-  <label for="sel1">Select Search Radius:</label>
-  <select class="form-control" id="sel1">
+  <label for="radius">Select Search Radius:</label>
+  <select class="form-control" name="radius" id="radius">
     <option></option>
 	<option>10 miles</option>
     <option>25 miles</option>
@@ -97,21 +112,25 @@
 </div> 
   <div class="col-sm-3">
  <div class="form-group">
-  <label for="sel1">Budget per Person:</label>
-  <select class="form-control" id="sel1">
+  <label for="budget">Budget per Person:</label>
+  <select class="form-control" id="budget" name="budget">
     <option></option>
 	<option>$0-$10</option>
     <option>$10-$20</option>
     <option>$20-$30</option>
     <option>$30-$40</option>
-	<option>$40+</option>
+	<option>$40+</option>	
   </select>
 </div> 
 </div>
 <div class=col-sm-3>
-<button type="button" class="btn btn-block"style="margin:23px">
+
+<button type="submit" value="Search" class="btn btn-block"style="margin:23px" onclick="myFunction()">
     <span class="glyphicon glyphicon-search"></span> Search 
   </button>
+
+</form>
+</div>
 </div>
 </div>
 
@@ -168,7 +187,7 @@
 <div class="footer">
   <p> <style>
 .footer {
-letter-spacing:6px;
+letter-spacing:8px;
   position: fixed;
   left: 0;
   bottom: 0;
