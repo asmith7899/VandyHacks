@@ -1,3 +1,5 @@
+<!-- Get Description, cost, location, hours -->
+<!-- Discount days? -->
 
 <!DOCTYPE html>
 <html>
@@ -9,9 +11,8 @@
     /* Always set the map height explicitly to define the size of the div
      * element that contains the map. */
     #map {
-      height: 60%;
       align: right;
-      width: 80%;
+      height: 67%;
     }
     /* Optional: Makes the sample page fill the window. */
     html, body {
@@ -31,8 +32,7 @@
     var service;
     var infowindow;
 
-
-    function geocode (address) {
+    function geocode(address) {
       const geocoder = new google.maps.Geocoder();
       geocoder.geocode({address}, function(results, status) {
         if (status == 'OK') {
@@ -40,23 +40,26 @@
         var marker = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location
-        });
+        })
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
       }
-      })
+    });
     }
 
     function initMap() {
-
       const urlParams = new URLSearchParams(window.location.search);
-      const location = urlParams.get('city');
-      const budget = urlParams.get('budget');
+      // const location = urlParams.get('city');
+      // const budget = urlParams.get('budget');
+      // const radius = urlParams.get('radius');
 
-      console.log(budget);
+      const place = urlParams.get('location');
 
+      // Cheekwood Botanical Garden and Museum of Art
 
-      geocode(location);
+      console.log(place);
+
+      geocode(place);
 
       // var vanderbilt = new google.maps.LatLng(36.1447,-86.8027);
       infowindow = new google.maps.InfoWindow();
