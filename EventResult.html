@@ -22,6 +22,109 @@
     }
 
   </style>
+
+  <style>
+  .event {
+  border-bottom-color:black;
+  border-bottom-width: 4px;
+  }
+  </style>
+
+  <style>
+  body {
+  font-family: "Courier New", Courier, monospace;
+  font:TT;
+    background: rgba(204)(204)(204) 0.50;
+  }
+  .sidenav {
+  height: 100%;
+  width: 35%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #e6e6e6;
+  overflow-x: hidden;
+  padding-top: 120px;
+  }
+  .sidenav a {
+   width: 35%;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  }
+  .sidenav a:hover {
+  width: 35%
+  color: #f1f1f1;
+  }
+  @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  }
+
+
+  .center {
+  text-align: right;
+  }
+  .center_text {
+  text-align: center;
+  }
+  .header {
+  text-align: center;
+  background-color: #404040;
+  padding-bottom: 0px;
+  font-family: "Courier New", Courier, monospace;
+  font:TT;
+  /font isnt exactly the same cause of
+  padding-top: 60px;
+  vertical-align:center;
+  letter-spacing: 6px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  border-color: #000000;
+  border-width: 3px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
+  </style>
+  <style>
+  .header2 {
+  text-align: center;
+  background-color: #404040;
+  padding-bottom: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font:TT;
+  /font isnt exactly the same cause of
+  padding-top: 0px;
+  margin-bottom: 15px;
+  letter-spacing: 6px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  border-color: #000000;
+  border-width: 3px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+  }
+  .event {
+  width = 35%
+  margin: 10px;
+  }
+  .map {
+   align: right;
+   height: 100%;
+   width: 100%;
+  }
+  </style>
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPxDT17n-Of-WP6bmJrHUdGpbrWKPC70s&libraries=places&callback=initMap" async defer></script>
 
   <script async defer>
@@ -49,11 +152,12 @@
 
     function initMap() {
       const urlParams = new URLSearchParams(window.location.search);
-      // const location = urlParams.get('city');
+      // const location = urlParams.get('location');
       // const budget = urlParams.get('budget');
       // const radius = urlParams.get('radius');
 
-      const place = urlParams.get('location');
+      // const place = urlParams.get('place_id');
+      const place = urlParams.get("location");
 
       // Cheekwood Botanical Garden and Museum of Art
 
@@ -77,6 +181,22 @@
       //       }
       //   }
       // )
+
+      var para = document.createElement("h1");               // Create a <p> element
+      para.innerText = place;               // Insert text
+      document.body.appendChild(para);
+
+      var address = document.createElement("p");
+      address.innerText = "233 5th Ave N, Nashville, TN 37219";
+      document.body.appendChild(address);
+
+      var phone = document.createElement("p");
+      phone.innerText = "(615) 752-6030";
+      document.body.appendChild(phone);
+
+      var hours = document.createElement("p");
+      hours.innerText = "Closed";
+      document.body.appendChild(hours);
     }
     function createMarker(place) {
       var marker = new google.maps.Marker({
@@ -88,9 +208,79 @@
         infowindow.open(map, this);
       });
     }
+
+    function getAddress() {
+      const address = new google.maps.Geocoder();
+      geocoder.geocode({address}, function(results, status) {
+        if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        })
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+    }
+
+    // function getURL() {
+      // var link = document.createElement('a');
+      // var linkText = document.createTextNode(address);
+      // a.appendChild(linkText);
+      // a.title = address;
+      // a.href = "http://example.com";
+
+    //   var map = new google.maps.Map(document.getElementById('map'));
+    //   document.getElementById('submit').addEventListener('click', function() {
+    //     geocodePlaceId(geocoder, map, infowindow);
+    //   });
+    // }
+
+    // This function is called when the user clicks the UI button requesting
+    // a geocode of a place ID.
+    function geocodePlaceId(geocoder, map, infowindow) {
+      var placeId = document.getElementById('place-id').value;
+      geocoder.geocode({'placeId': placeId}, function(results, status) {
+        if (status === 'OK') {
+          if (results[0]) {
+            map.setZoom(11);
+            map.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+            });
+            infowindow.setContent(results[0].formatted_address);
+            infowindow.open(map, marker);
+          } else {
+            window.alert('No results found');
+          }
+        } else {
+          window.alert('Geocoder failed due to: ' + status);
+        }
+      });
+    }
   </script>
+  <!-- <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPxDT17n-Of-WP6bmJrHUdGpbrWKPC70s&callback=getAddress">
+  </script> -->
+
+
+
 </head>
 <body>
   <div id="map"></div>
+
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-sm-6">
+	<div class="event">
+		<!-- <a href="#" style="text-align:center;padding-left:7px;width:100%; border: black">Children's Day at the Museum of Modern Art</a> -->
+		<!-- <h2>More info</h2> -->
+		<!-- <p>$ $ $</p> -->
+	</div>
+  </div>
+  </div>
+  </div>
 </body>
 </html>
